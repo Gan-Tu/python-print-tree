@@ -98,5 +98,18 @@ discomfiture = Node("discomfiture", selfconsciousness2)
 abashment = Node("abashment", selfconsciousness2)
 confusion = Node("confusion", selfconsciousness2)
 
-printTree(shame)
 
+#         ┌[conscience]
+#         ├[selfdisgust]
+#         │                                                          ┌[shamefacedness]
+#         │                                                          ├[chagrin]
+#         │                ┌[selfconsciousness]─[selfconsciousness2]─├[discomfiture]
+#         │                │                                         ├[abashment]
+# [shame]─│                │                                         └[confusion]
+#         └[embarrassment]─├[shamefacedness]
+#                          ├[chagrin]
+#                          ├[discomfiture]
+#                          ├[abashment]
+#                          └[confusion]
+
+printTree(shame)
