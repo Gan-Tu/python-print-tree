@@ -8,7 +8,7 @@ class Node:
       self.parent.children.append(self)
 
   def __str__(self):
-    return f"[{self.val}]"
+    return f"{self.val}"
 
   def __repr__(self):
     return str(self)
@@ -91,25 +91,35 @@ discomfiture = Node("discomfiture", embarrassment)
 abashment = Node("abashment", embarrassment)
 confusion = Node("confusion", embarrassment)
 
-selfconsciousness2 = Node("selfconsciousness2", selfconsciousness)
-shamefacedness = Node("shamefacedness", selfconsciousness2)
-chagrin = Node("chagrin", selfconsciousness2)
-discomfiture = Node("discomfiture", selfconsciousness2)
-abashment = Node("abashment", selfconsciousness2)
-confusion = Node("confusion", selfconsciousness2)
+shamefacedness = Node("shamefacedness", chagrin)
+discomfiture = Node("discomfiture", chagrin)
+abashment = Node("abashment", chagrin)
+confusion = Node("confusion", chagrin)
 
 
-#         ┌[conscience]
-#         ├[selfdisgust]
-#         │                                                          ┌[shamefacedness]
-#         │                                                          ├[chagrin]
-#         │                ┌[selfconsciousness]─[selfconsciousness2]─├[discomfiture]
-#         │                │                                         ├[abashment]
-# [shame]─│                │                                         └[confusion]
-#         └[embarrassment]─├[shamefacedness]
-#                          ├[chagrin]
-#                          ├[discomfiture]
-#                          ├[abashment]
-#                          └[confusion]
+v2 = Node("v2", selfconsciousness)
+shamefacedness = Node("shamefacedness", v2)
+chagrin = Node("chagrin", v2)
+discomfiture = Node("discomfiture", v2)
+abashment = Node("abashment", v2)
+confusion = Node("confusion", v2)
+
+
+
+#       ┌conscience
+#       ├selfdisgust
+#       │                                    ┌shamefacedness
+#       │                                    ├chagrin
+#       │              ┌selfconsciousness─v2─├discomfiture
+#       │              │                     ├abashment
+#       │              │                     └confusion
+# shame─│              ├shamefacedness
+#       └embarrassment─│        ┌shamefacedness
+#                      │        ├discomfiture
+#                      ├chagrin─├abashment
+#                      │        └confusion
+#                      ├discomfiture
+#                      ├abashment
+#                      └confusion
 
 printTree(shame)
